@@ -13,13 +13,17 @@ public class Bucket extends HelperBase{
 		super(wd);
 	}
 	
-	public void fields(String lastname, String name, String secondname, String phone, String email) {
+	public void contacts(String lastname, String name, String secondname, String phone, String email) {
 		type(By.xpath("//input[@data-save='last-name']"), lastname);
 		type(By.xpath("//input[@data-save='name']"), name);
 		type(By.xpath("//input[@data-save='second-name']"), secondname);
 		type(By.xpath("//input[@data-save='phone']"), phone);
-		type(By.xpath("//input[@data-save='email']"), email);
-		
+		type(By.xpath("//input[@data-save='email']"), email);		
 	}
+	
+	public void address(String city) {
+		type(By.xpath("//input[@data-save='city']"), city);
+	}
+	
 	
 }

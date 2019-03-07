@@ -15,8 +15,6 @@ import junit.framework.Assert;
 public class Items extends HelperBase {
 	List<WebElement> items = new ArrayList<WebElement>();
 	String nameItem;
-	List<Integer> pricesNotSort = new ArrayList<Integer>();
-	List<Integer> pricesSort = new ArrayList<Integer>();
 
 	public Items(WebDriver wd) {
 		super(wd);
@@ -43,7 +41,7 @@ public class Items extends HelperBase {
 	public void goToBucket() {
 		WebElement toBucket = wd.findElement(By.id("buy-to-cart"));
 		toBucket.click();
-		Assert.assertTrue(toBucket.toString().contains("В заказе"));		
+		Assert.assertTrue(toBucket.getAttribute("В заказе"), true);		
 	}
 	
 	// Проверить что добавленный товар отобразился в корзине

@@ -18,21 +18,22 @@ public class NavigationHelper extends HelperBase {
 	}
 
 	// Проверить отображение меню навигации
-	public boolean isElementPresent(By by) {
-		try {
-			wd.findElement(by);
-			return true;
-		} catch (org.openqa.selenium.NoSuchElementException e) {
-			return false;
-		}		
+	public void getMenu() {
+		Assert.assertTrue(wd.getPageSource().contains("n-header-bottom"));
 	}
 
 	public void goTo50() {
-		wd.findElement(By.linkText("Sale -50%")).click();		
+		wd.findElement(By.xpath("//*[@id='body']/div[2]/div[2]/div[3]/div/div[2]/a[5]")).click();
 		Assert.assertTrue(wd.getTitle().contains("Глобальная распродажа в ювелирном магазине 585 Золотой."));
-		
 	}
 
+	public void setAddress() {
+		wd.findElement(By.xpath("//[@id='app']/div[1]/div[1]/form/div[5]/a")).click();
+	}
 
+	public void toPay() {
+		wd.findElement(By.linkText("Оплата на сайте")).click();
+		Assert.assertTrue(wd.getTitle().contains("Яндекс.Деньги"));
+	}
 
 }
