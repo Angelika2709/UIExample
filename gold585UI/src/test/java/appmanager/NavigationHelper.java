@@ -1,15 +1,13 @@
 package appmanager;
 
-import java.util.List;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import junit.framework.Assert;
+
 
 public class NavigationHelper extends HelperBase {
 
@@ -26,13 +24,16 @@ public class NavigationHelper extends HelperBase {
 		wd.findElement(By.xpath("//*[@id='body']/div[2]/div[2]/div[3]/div/div[2]/a[5]")).click();
 		Assert.assertTrue(wd.getTitle().contains("√лобальна€ распродажа в ювелирном магазине 585 «олотой."));
 	}
-
+	
 	public void setAddress() {
-		wd.findElement(By.xpath("//[@id='app']/div[1]/div[1]/form/div[5]/a")).click();
-	}
+		wd.findElement(By.xpath("//span[@class='alter-delivery-arrow']")).click();
+		WebDriverWait wait = new WebDriverWait(wd, 5);
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@data-save='city']")));
+		}
 
-	public void toPay() {
-		wd.findElement(By.linkText("ќплата на сайте")).click();
+	public void toPay() throws Exception {	
+		wd.findElement(By.xpath("//*[@id=\'app\']/div[1]/div[1]/form/div[1]/div/a")).click();
+		Thread.sleep(10000);
 		Assert.assertTrue(wd.getTitle().contains("яндекс.ƒеньги"));
 	}
 

@@ -25,5 +25,4 @@ public class Bucket extends HelperBase{
 		type(By.xpath("//input[@data-save='city']"), city);
 	}
 	
-	
 }
