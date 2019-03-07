@@ -9,7 +9,7 @@ import org.openqa.selenium.By;
 class UITest extends TestBase{
 
 	@Test
-	void testGold585UI() throws Exception {
+	void testGold585UI() {
 			app.getNavigationHelper().isElementPresent(By.className("n-header-bottom"));
 			Assert.assertTrue(app.getNavigationHelper().isElementPresent(By.className("n-header-bottom")));			
 			
@@ -17,6 +17,8 @@ class UITest extends TestBase{
 			app.getItems().getCountItems();
 			app.getItems().getFirstItem();
 			app.getItems().goToBucket();
+			app.getBucket().fields("dfkds", "fgrdg", "rgd", "rg", "rgfdrt");
+			
 			
 			
 			

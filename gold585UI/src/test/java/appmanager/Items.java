@@ -23,8 +23,7 @@ public class Items extends HelperBase {
 	}
 
 	@SuppressWarnings("deprecation")
-	public void getCountItems() throws InterruptedException {
-		Thread.sleep(5000);
+	public void getCountItems() {
 		items = wd.findElements(By.xpath("//div[@class='grid-item ddl_product']"));
 		int countItems = items.size();
 		Assert.assertEquals(40, countItems);
@@ -44,11 +43,22 @@ public class Items extends HelperBase {
 	public void goToBucket() {
 		WebElement toBucket = wd.findElement(By.id("buy-to-cart"));
 		toBucket.click();
-		Assert.assertTrue(toBucket.toString().contains("В заказе"));
-		
+		Assert.assertTrue(toBucket.toString().contains("В заказе"));		
 	}
+	
+	// Проверить что добавленный товар отобразился в корзине
+	public void moveToBucket() {
+		wd.findElement(By.xpath("//a[@title='Корзина']")).click();
+		if (wd.getPageSource().contains(nameItem))
+			System.out.println("Name items");
+	}
+	
+	
+		
+	
+	
 
-
+	
 
 
 

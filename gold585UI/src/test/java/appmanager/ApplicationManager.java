@@ -10,6 +10,7 @@ public class ApplicationManager {
 	WebDriver wd;
 	private NavigationHelper navigationHelper;
 	private Items items;
+	private Bucket bucket;
 	private String browser;
 
 	public ApplicationManager(String browser) {
@@ -23,7 +24,7 @@ public class ApplicationManager {
 		wd.get("https://www.gold585.ru");	
 		navigationHelper = new NavigationHelper(wd);
 		items = new Items(wd);	
-
+		bucket = new Bucket(wd);	
 	}
 
 	public void stop() {
@@ -38,8 +39,10 @@ public class ApplicationManager {
 	public Items getItems() {
 		return items;
 	}
-	
 
+	public Bucket getBucket() {
+		return bucket;
+	}
     
     
    }
