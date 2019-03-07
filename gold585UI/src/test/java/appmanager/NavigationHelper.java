@@ -24,11 +24,13 @@ public class NavigationHelper extends HelperBase {
 			return true;
 		} catch (org.openqa.selenium.NoSuchElementException e) {
 			return false;
-		}
+		}		
 	}
 
 	public void goTo50() {
-		wd.findElement(By.linkText("Sale -50%")).click();
+		wd.findElement(By.linkText("Sale -50%")).click();		
+		Assert.assertTrue(wd.getTitle().contains("Глобальная распродажа в ювелирном магазине 585 Золотой."));
+		
 	}
 
 

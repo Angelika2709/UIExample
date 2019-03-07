@@ -5,9 +5,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
+
 public class ApplicationManager {
 	WebDriver wd;
 	private NavigationHelper navigationHelper;
+	private Items items;
 	private String browser;
 
 	public ApplicationManager(String browser) {
@@ -20,9 +22,8 @@ public class ApplicationManager {
 		wd.manage().window().maximize();
 		wd.get("https://www.gold585.ru");	
 		navigationHelper = new NavigationHelper(wd);
-		
-//		insuranceType = new InsuranceType(wd);
-//		insurerName = new Insurer(wd);
+		items = new Items(wd);	
+
 	}
 
 	public void stop() {
@@ -32,6 +33,10 @@ public class ApplicationManager {
 
 	public NavigationHelper getNavigationHelper() {
 		return navigationHelper;
+	}
+	
+	public Items getItems() {
+		return items;
 	}
 	
 
