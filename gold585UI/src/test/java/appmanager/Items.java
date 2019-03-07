@@ -1,16 +1,11 @@
 package appmanager;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
-
-import junit.framework.Assert;
+import org.junit.Assert;
 
 public class Items extends HelperBase {
 	List<WebElement> items = new ArrayList<WebElement>();

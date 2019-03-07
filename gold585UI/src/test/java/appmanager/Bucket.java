@@ -5,8 +5,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 
-
-
 public class Bucket extends HelperBase{
 
 	public Bucket(WebDriver wd) {
